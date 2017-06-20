@@ -1,0 +1,75 @@
+import { Table } from './table'
+
+export const TABLES: Table[] = [{
+	id: 1,
+	x: 0,
+	y: 0,
+	width: 25,
+	height: 10
+}, {
+	id: 2,
+	x: 37.5,
+	y: 0,
+	width: 25,
+	height: 10
+}, {
+	id: 3,
+	x: 62.5,
+	y: 0,
+	width: 25,
+	height: 10
+}, {
+	id: 4,
+	x: 0,
+	y: 20,
+	width: 25,
+	height: 10
+}, {
+	id: 5,
+	x: 37.5,
+	y: 20,
+	width: 25,
+	height: 10
+}, {
+	id: 6,
+	x: 0,
+	y: 40,
+	width: 25,
+	height: 10
+}, {
+	id: 7,
+	x: 37.5,
+	y: 40,
+	width: 25,
+	height: 10
+}, {
+	id: 8,
+	x: 75,
+	y: 20,
+	width: 12.5,
+	height: 30
+}, {
+	id: 9,
+	x: 0,
+	y: 60,
+	width: 25,
+	height: 20
+}, {
+	id: 10,
+	x: 37.5,
+	y: 60,
+	width: 12.5,
+	height: 20
+}, {
+	id: 11,
+	x: 62.5,
+	y: 60,
+	width: 12.5,
+	height: 20
+}, {
+	id: 12,
+	x: 87.5,
+	y: 60,
+	width: 12.5,
+	height: 20
+}]

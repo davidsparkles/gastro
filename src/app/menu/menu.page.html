@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Menu
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<h1>Table: {{tableId}}</h1>
+	<ul>
+		<li *ngFor="let product of products" (click)="onOrderClick(product.id)">
+			{{product.label}} - {{product.price | currency:"EUR":true}}
+		</li>
+	</ul>
+	<div (click)="onBillClick()" class="bill">
+  	Bill
+  </div>
+</ion-content>

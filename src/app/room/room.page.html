@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Room</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="room">
+		<div *ngFor="let table of tables" class="table {{table.type}}" (click)="onTableClick(table.id)"
+			[ngStyle]="{'top': table.y+'%', 'left': table.x+'%', 'height': table.height+'%', 'width': table.width+'%'}">
+			{{table.id}}
+		</div>
+	</div>
+</ion-content>
