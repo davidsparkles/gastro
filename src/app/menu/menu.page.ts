@@ -31,7 +31,7 @@ export class MenuPage {
   }
 
   onOrderClick(productId): void {
-    this.orderService.addOrder(this.tableId, productId)
+    /*this.orderService.addOrder(this.tableId, productId)*/
   }
 
 }

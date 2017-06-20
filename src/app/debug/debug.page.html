@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Debug
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  Tables:
+  <ul>
+    <li *ngFor="let table of tables">
+      {{table.id}}
+    </li>
+  </ul>
+  Products:
+  <ul>
+    <li *ngFor="let product of products">
+      {{product.id}}, {{product.label}}, {{product.price}} EUR
+    </li>
+  </ul>
+  Orders:
+  <ul>
+    <li *ngFor="let order of orders">
+      {{order.id}}, {{order.tableId}}
+      <ul>
+        <li *ngFor="let item of order.items">
+          {{item.productId}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+  TableId: <input #tableId (keyup.enter)="addItemToOrder(tableId.value, productId.value)"><br>
+  ProductId: <input #productId (keyup.enter)="addItemToOrder(tableId.value, productId.value)">
+  <button (click)="releaseOrder(tableId.value)">Release Order</button>
+</ion-content>

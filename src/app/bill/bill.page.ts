@@ -20,7 +20,7 @@ export class BillPage {
     private navParams: NavParams,
     private orderService: OrderService,
     private productService: ProductService
-  ) {
+  ) {/*
     this.tableId = this.navParams.get('id')
   	this.items = _.chain(this.orderService.getItemsOfTable(this.tableId))
       .countBy()
@@ -34,6 +34,6 @@ export class BillPage {
       .map(({ price, count }) => price * count)
       .sum()
       .value()
-  }
+  */}
 
 }

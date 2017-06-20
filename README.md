@@ -31,3 +31,7 @@ The manager wants:
 - to view overall order information
  + how many of what was ordered
  + how much time was needed
+- supervise legal aspects
+ + taxes
+ + accounting
+- print bills

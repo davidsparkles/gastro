@@ -1,6 +1,14 @@
 import { Table } from './table'
 
 export const TABLES: Table[] = [{
+  id: '1'
+}, {
+  id: '2'
+}, {
+  id: '3'
+}]
+
+/*[{
 	id: 1,
 	x: 0,
 	y: 0,
@@ -72,4 +80,4 @@ export const TABLES: Table[] = [{
 	y: 60,
 	width: 12.5,
 	height: 20
-}]
+}]*/
