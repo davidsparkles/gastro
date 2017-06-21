@@ -12,14 +12,15 @@ import { Item } from './item'
 @Injectable()
 export class OrderService {
 
-	private orders: Order[]
+	private orders: Order[] = []
 
   constructor(
     private tableService: TableService,
     private productService: ProductService,
     private log: LogService
   ) {
-    this.orders = this.loadOrders()
+    this.loadOrders()
+      .then(orders => this.orders = orders)
   }
 
   public getOrders(): Order[] {
@@ -78,8 +79,8 @@ export class OrderService {
     return newOrder
   }
 
-  private loadOrders(): Order[] {
-    return []
+  private loadOrders(): Promise<Order[]> {
+    return Promise.resolve([])
   }
 
 }

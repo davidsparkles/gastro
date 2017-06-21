@@ -10,7 +10,8 @@ export class TableService {
   private tables: Table[] = []
 
   constructor() {
-    this.tables = this.laodTables()
+    this.laodTables()
+      .then(tables => this.tables = tables)
   }
 
   public getTables(): Table[] {
@@ -21,8 +22,8 @@ export class TableService {
     return !!_.find(this.tables, (table: Table) => table.id === id.toString())
   }
 
-  private laodTables(): Table[] {
-  	return TABLES
+  private laodTables(): Promise<Table[]> {
+    return Promise.resolve(TABLES)
   } 
 
 }
