@@ -2,7 +2,6 @@ import { Component } from '@angular/core'
 import { NavController, NavParams } from 'ionic-angular'
 import * as _ from 'lodash'
 
-import { OrderService } from '../order.service'
 import { ProductService } from '../product.service'
 
 @Component({
@@ -18,7 +17,6 @@ export class BillPage {
   constructor(
   	public navCtrl: NavController,
     private navParams: NavParams,
-    private orderService: OrderService,
     private productService: ProductService
   ) {/*
     this.tableId = this.navParams.get('id')

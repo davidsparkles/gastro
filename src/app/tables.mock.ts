@@ -1,11 +1,24 @@
-import { Table } from './table'
+import { Table } from './classes'
 
 export const TABLES: Table[] = [{
-  id: '1'
+  id: '1',
+  items: [{
+	id: '0',
+	label: 'Pizza',
+	price: 8.00,
+	isPayed: false
 }, {
-  id: '2'
+	id: '3',
+	label: 'Drink',
+	price: 4.00,
+	isPayed: true
+}]
 }, {
-  id: '3'
+  id: '2',
+  items: []
+}, {
+  id: '3',
+  items: []
 }]
 
 /*[{

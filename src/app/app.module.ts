@@ -12,7 +12,6 @@ import { StatusBar } from '@ionic-native/status-bar'
 import { SplashScreen } from '@ionic-native/splash-screen'
 
 import { TableService } from './table.service'
-import { OrderService } from './order.service'
 import { ProductService } from './product.service'
 import { LogService } from './log.service'
 
@@ -41,7 +40,6 @@ import { LogService } from './log.service'
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TableService,
-    OrderService,
     ProductService,
     LogService
   ]

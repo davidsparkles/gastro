@@ -11,8 +11,13 @@ export class ProductService {
 	private products: Product[] = []
 
   constructor() {
-	  this.loadProducts()
-      .then(products => this.products = products)
+	  this.products = this.loadProducts()
+  }
+
+  public checkProductId(id: string): boolean {
+    const product = _.find(this.products, (product: Product) => product.id === id)
+    if (product === undefined) return false
+    return true
   }
 
   public getProducts(): Product[] {
@@ -23,31 +28,8 @@ export class ProductService {
   	return _.find(this.products, product => product.id === id)
   }
 
-  public checkProductId(id: string): boolean {
-    return !!_.find(this.products, (product: Product) => product.id === id)
-  }
-
-  public getProductLabels(items: Item[]): string[] {
-    const labels = _.map(items, (item: Item) => {
-        const product = this.getProduct(item.productId)
-        return product.label
-      })
-    return labels
-  }
-
-  public getPrice(items: Item[]): number {
-    const price = _.chain(items)
-      .map((item: Item) => {
-        const product = this.getProduct(item.productId)
-        return product.price
-      })
-      .sum()
-      .value()
-    return price
-  }
-
-  private loadProducts(): Promise<Product[]> {
-	  return Promise.resolve(PRODUCTS)
+  private loadProducts(): Product[] {
+	  return PRODUCTS
   }
 
 }

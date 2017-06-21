@@ -5,7 +5,6 @@ import { BillPage } from '../bill/bill.page'
 
 import { Product } from '../product'
 import { ProductService } from '../product.service'
-import { OrderService } from '../order.service'
 
 @Component({
   selector: 'page-menu',
@@ -19,7 +18,6 @@ export class MenuPage {
   constructor(
   	public navCtrl: NavController,
     private navParams: NavParams,
-    private orderService: OrderService,
     private productService: ProductService
   ) {
     this.tableId = this.navParams.get('id')

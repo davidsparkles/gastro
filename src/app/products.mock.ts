@@ -1,4 +1,4 @@
-import { Product } from './product'
+import { Product } from './classes'
 
 export const PRODUCTS: Product[] = [{
 	id: '0',
