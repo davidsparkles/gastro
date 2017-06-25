@@ -3,10 +3,9 @@ import { BrowserModule } from '@angular/platform-browser'
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular'
 import { MyApp } from './app.component'
 
-import { DebugPage } from './debug/debug.page'
-//import { MenuPage } from './menu/menu.page'
-//import { BillPage } from './bill/bill.page'
-//import { RoomPage } from './room/room.page'
+import { BillPage } from './bill/bill.page'
+import { OverviewPage } from './overview/overview.page'
+import { AddItemPage } from './additem/additem.page'
 
 import { StatusBar } from '@ionic-native/status-bar'
 import { SplashScreen } from '@ionic-native/splash-screen'
@@ -18,10 +17,9 @@ import { LogService } from './log.service'
 @NgModule({
   declarations: [
     MyApp,
-    DebugPage,
-    //MenuPage,
-    //BillPage,
-    //RoomPage
+    BillPage,
+    OverviewPage,
+    AddItemPage
   ],
   imports: [
     BrowserModule,
@@ -30,10 +28,9 @@ import { LogService } from './log.service'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    DebugPage,
-    //MenuPage,
-    //BillPage,
-    //RoomPage
+    BillPage,
+    OverviewPage,
+    AddItemPage
   ],
   providers: [
     StatusBar,

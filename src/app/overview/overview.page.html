@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Overview - Table <span *ngIf="selectedTable">{{selectedTable.id}}</span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <span *ngIf="displayItems&&displayItems.length===0">No items ordered</span>
+    <ul *ngIf="selectedTable">
+      <li *ngFor="let displayItem of displayItems">
+        {{displayItem.label}} - {{displayItem.price}} EUR x {{displayItem.count - displayItem.payedCount}} ({{displayItem.count}})
+      </li>
+    </ul>
+
+    <button (click)="onAddItems()">Add items</button>
+    <button (click)="onBill()">Bill</button>
+    <br>
+    Total = {{total}} EUR <br>
+    Left to pay = {{leftToPay}} EUR
+  </div>
+</ion-content>

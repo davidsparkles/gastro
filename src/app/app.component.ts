@@ -4,13 +4,13 @@ import { StatusBar } from '@ionic-native/status-bar'
 import { SplashScreen } from '@ionic-native/splash-screen'
 import * as _ from 'lodash'
 
-import { DebugPage } from './debug/debug.page'
+import { OverviewPage } from './overview/overview.page'
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = DebugPage
+  rootPage:any = OverviewPage
 
   constructor(
     platform: Platform,

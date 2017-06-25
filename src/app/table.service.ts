@@ -13,9 +13,8 @@ export class TableService {
     this.tables = this.laodTables()
   }
 
-  public addItemToTable(tableId: string, product: Product): void {
+  public addItemToTable(table: Table, product: Product): void {
     const item: Item = _.assign({ isPayed: false }, product)
-    const table = this.getTable(tableId)
     table.items.push(item)
   }
 

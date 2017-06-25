@@ -1,8 +1,9 @@
 import { Component } from '@angular/core'
 import { NavController, NavParams } from 'ionic-angular'
-import * as _ from 'lodash'
+// import * as _ from 'lodash'
 
-import { ProductService } from '../product.service'
+import { TableService } from '../table.service'
+import { Table } from '../classes'
 
 @Component({
   selector: 'page-bill',
@@ -10,28 +11,24 @@ import { ProductService } from '../product.service'
 })
 export class BillPage {
 
-  private tableId: number = null
-	private items: any[]
-  private total: number
+  private selectedTable: Table
 
   constructor(
-  	public navCtrl: NavController,
+    public navCtrl: NavController,
     private navParams: NavParams,
-    private productService: ProductService
-  ) {/*
-    this.tableId = this.navParams.get('id')
-  	this.items = _.chain(this.orderService.getItemsOfTable(this.tableId))
-      .countBy()
-      .map((count, productId) => {
-        const product = this.productService.getProduct(parseInt(productId))
-        console.log(_.assign(product, { count }))
-        return _.assign(product, { count })
-      })
-      .value()
-    this.total = _.chain(this.items)
-      .map(({ price, count }) => price * count)
-      .sum()
-      .value()
-  */}
+    private tableService: TableService
+  ) { }
+
+  ionViewWillEnter() {
+    this.selectedTable = this.navParams.get('selectedTable')  
+  }
+
+  private releaseTable(): void {
+    //TODO
+    this.tableService.setItemsPayed(this.selectedTable.items)
+    //
+    this.tableService.releaseTable(this.selectedTable.id)
+    this.navCtrl.pop()
+  }
 
 }

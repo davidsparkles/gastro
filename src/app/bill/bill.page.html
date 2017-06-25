@@ -1,22 +1,18 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Bill
-    </ion-title>
+    <ion-title>Bill - Table <span *ngIf="selectedTable">{{selectedTable.id}}</span></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-	<ul>
-		<li *ngFor="let item of items">
-			<div class="label">{{item.label}}</div>
-			<div class="count-price">x{{item.count}} - {{item.price | currency:"EUR":true}}</div>
-		</li>
-	</ul>
-	<div class="total-box">
-		Total =
-		<div class="total">
-			{{total | currency:"EUR":true}}
-		</div>
-	</div>
+  <div>
+    <ul *ngIf="selectedTable">
+      <li *ngFor="let item of selectedTable.items">
+        {{item.id}}, {{item.label}}, {{item.price}} EUR
+      </li>
+    </ul>
+
+    <button (click)="releaseTable()">Approve payment and release table</button>
+    
+  </div>
 </ion-content>

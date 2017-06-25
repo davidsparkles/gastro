@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Items - Table <span *ngIf="selectedTable">{{selectedTable.id}}</span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ul>
+      <li *ngFor="let product of products">
+        <button (click)="addItemToTable(product)">{{product.id}}, {{product.label}}, {{product.price}} EUR</button>
+      </li>
+    </ul>
+    Total = {{total}} EUR <br>
+  </div>
+</ion-content>
